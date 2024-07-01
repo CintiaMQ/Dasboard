@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Test</title>
+    <style>
+        .question-container {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .options {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .option {
+            cursor: pointer;
+            transition: transform 0.2s;
+            flex: 1 1 150px; /* Esto permite que las opciones se ajusten automáticamente en pantallas pequeñas */
+            max-width: 200px; /* Limita el tamaño máximo de las opciones */
+        }
+
+        .option:hover {
+            transform: scale(1.1);
+        }
+
+        .option img {
+            width: 100%;
+            height: 100px; /* Ajusta la altura de los gifs */
+            object-fit: cover;
+        }
+
+        .option p {
+            margin-top: 10px;
+        }
+
+        /* Media queries para ajustes adicionales en pantallas pequeñas */
+        @media (max-width: 768px) {
+            .option {
+                flex: 1 1 100px; /* Ajusta el tamaño mínimo en pantallas pequeñas */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .options {
+                gap: 10px; /* Reduce el espacio entre opciones en pantallas muy pequeñas */
+            }
+
+            .option {
+                flex: 1 1 100%; /* Las opciones ocupan todo el ancho en pantallas muy pequeñas */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <div class="logo-image">
+                <img src="./logo.png" alt="">
+            </div>
+        </div>
+
+        <div class="menu-items">
+            <ul class="navLinks">
+                <li class="navList">
+                    <a href="index.html">
+                        <ion-icon name="home"></ion-icon>
+                        <span class="links">Inicio</span>
+                    </a>
+                </li>
+                <li class="navList active">
+                    <a href="test.html">
+                        <ion-icon name="clipboard"></ion-icon>
+                        <span class="links">Test</span>
+                    </a>
+                </li>
+                <li class="navList">
+                    <a href="resultados.html">
+                        <ion-icon name="bar-chart"></ion-icon>
+                        <span class="links">Resultados</span>
+                    </a>
+                </li>
+                <li class="navList">
+                    <a href="videos.html">
+                        <ion-icon name="film"></ion-icon>
+                        <span class="links">Videos</span>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="bottom-link">
+                <li>
+                    <a href="#">
+                        <ion-icon name="log-out-outline"></ion-icon>
+                        <span class="links">Logout</span>
+                    </a>
+                </li>
+                <li class="mode">
+                    <a href="#">
+                        <ion-icon name="moon-outline"></ion-icon>
+                        <span class="links">Dark Mode</span>
+                        <div class="darkToggle">
+                            <span class="switch"></span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="dashboard">
+        <div class="top">
+            <ion-icon class="navToggle" name="menu-outline"></ion-icon>
+            <div class="searchBox">
+                <ion-icon name="search-outline"></ion-icon>
+                <input type="text" placeholder="Search">
+            </div>
+            <img src="./logo.png" alt="">
+        </div>
+        <div class="container">
+            <h1>Bienvenido a Test</h1>
+            <div class="question-container">
+                <h2>¿Cuál de estas actividades disfrutas más?</h2>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">
+                        <img src="https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif" alt="Programar">
+                        <p>Programar</p>
+                    </div>
+                    <div class="option" onclick="selectOption(this)">
+                        <img src="https://media.giphy.com/media/l0MYr8Aw0pU5jzAIE/giphy.gif" alt="Diseñar">
+                        <p>Diseñar</p>
+                    </div>
+                    <div class="option" onclick="selectOption(this)">
+                        <img src="https://media.giphy.com/media/xTiTnJ3BooiDs8dL7W/giphy.gif" alt="Escribir">
+                        <p>Escribir</p>
+                    </div>
+                    <div class="option" onclick="selectOption(this)">
+                        <img src="https://media.giphy.com/media/1X7KVsc6KjBd3RudXH/giphy.gif" alt="Enseñar">
+                        <p>Enseñar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function selectOption(element) {
+            alert('Seleccionaste: ' + element.querySelector('p').innerText);
+        }
+    </script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>
